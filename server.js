@@ -2,7 +2,7 @@ const dotenv = require('dotenv').config();
 const express = require('express');
 const app = express();
 const path = require('path');
-const PORT = 15000;
+const PORT = 15002;
 const exphbs = require('express-handlebars');
 const mongoose = require('mongoose');
 const housesDB = require('./houses');
@@ -134,7 +134,7 @@ mongoose.connection.once('open', () => {
 });
 
 app.on('ready', function () {
-  app.listen(process.env.PORT | PORT, () => {
+  app.listen(process.env.PORT || PORT, () => {
     console.log(`Listening on port: ${PORT}`);
   });
 });
