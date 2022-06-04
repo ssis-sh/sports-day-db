@@ -1,7 +1,8 @@
+const dotenv = require('dotenv').config();
 const express = require('express');
 const app = express();
 const path = require('path');
-const PORT = 1234;
+const PORT = 15000;
 const exphbs = require('express-handlebars');
 const mongoose = require('mongoose');
 const housesDB = require('./houses');
@@ -126,16 +127,14 @@ app.get('/get', (req, res) => {
  * App runs after the database connection is open
  *
  */
-mongoose.connect(
-  'mongodb+srv://test1234:test1234@cluster0.s5gcv.mongodb.net/AllSchoolPoints?retryWrites=true&w=majority'
-);
+mongoose.connect(process.env.CONNECTION);
 
 mongoose.connection.once('open', () => {
   app.emit('ready');
 });
 
 app.on('ready', function () {
-  app.listen(PORT, () => {
+  app.listen(process.env.PORT | PORT, () => {
     console.log(`Listening on port: ${PORT}`);
   });
 });
