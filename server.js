@@ -58,15 +58,17 @@ app.get('/', (req, res) => {
 
 app.get('/logs', (req, res) => {
   updateLogs();
-  history.forEach((log, index) => {
-    log.lastUpdate = log.lastUpdate.toDateString();
-    // console.log(log.lastUpdate);
-    // console.log('This is working');
-  });
+  setTimeout(() => {
+    history.forEach((log, index) => {
+      log.lastUpdate = log.lastUpdate.toDateString();
+      // console.log(log.lastUpdate);
+      // console.log('This is working');
+    });
 
-  res.render('log', {
-    history,
-  });
+    res.render('log', {
+      history,
+    });
+  }, 1000);
 });
 
 app.post('/add', (req, res) => {
