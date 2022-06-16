@@ -171,3 +171,44 @@ async function updateLogs() {
     // console.log(history);
   });
 }
+
+//Code for adding houses to an empty DB
+// const ruby = new housesDB({
+//   house: 'Ruby',
+//   points: 100,
+//   message: 'Go Amber',
+// });
+
+// ruby.save(function (err, doc) {
+//   if (err) return console.error(err);
+// });
+
+// const sapphire = new housesDB({
+//   house: 'Sapphire',
+//   points: 100,
+//   message: 'Go Sapphire',
+// });
+
+// sapphire.save(function (err, doc) {
+//   if (err) return console.error(err);
+// });
+
+// const pearl = new housesDB({
+//   house: 'Pearl',
+//   points: 100,
+//   message: 'Go Pearl',
+// });
+
+// pearl.save(function (err, doc) {
+//   if (err) return console.error(err);
+// });
+
+// const amber = new housesDB({
+//   house: 'Amber',
+//   points: 100,
+//   message: 'Go Amber',
+// });
+
+// amber.save(function (err, doc) {
+//   if (err) return console.error(err);
+// });
